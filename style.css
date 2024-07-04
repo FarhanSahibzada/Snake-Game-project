@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+
+}
+
+.head{
+    margin-right: 20px;
+}
+.img {
+    margin-right: 10px;
+    width: 450px;
+    height: 450px;
+    object-fit: cover !important;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
+}
+
+#board{
+    background: #fefedfc9;
+    width: 90vmin;
+    height: 90vmin;
+    margin-top: 20px;
+    margin-right: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: repeat(18,1fr);
+    grid-template-rows: repeat(18,1fr);
+
+
+}
+@media  screen  and (max-width:570px) {
+    
+    .main{
+        flex-wrap: wrap;
+    }
+}
+
+.headss{
+    background:linear-gradient(rgb(231, 109, 109),rgb(236, 236, 148));
+    border: 1px solid purple;
+    transform: scale(1.01);
+    border-radius: 12px;
+}
+.snakebody{
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+.food{
+    background:linear-gradient(red,purple);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+.score{
+    position: absolute;
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+    top: 50px;
+    left: 34.5%;
+
+}
+.highest{
+    position: absolute;
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+    top: 90px;
+    left: 28.5%;
+}
