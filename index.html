@@ -6,23 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
-<body>
-    <span class="score">Score :<span id="score"></span></span><br>
-    <span class="highest">Highest Score :<span id="highScoreBox"></span>&nbsp</span>
-    <div class="main" style="display: flex; justify-content: space-evenly; align-items: center;">
+<body >
+    <div class="scoreee">
+        <span class="score">Score :<span id="score"></span></span><br>
+        <span class="highest">Highest Score :<span id="highScoreBox"></span>&nbsp</span>
+    </div>
 
+    <div class="main" style="display: flex; justify-content: space-evenly; align-items: center; overflow-x: hidden;">
         <div class="head">
-            
             <img class="img" src="images/image2-removebg-preview.png" alt="">
         </div>
         <div class="container">
             <div id="board">
-                
             </div>
         </div>
-        
+    </div>
+    <div class="btnss">
+        <div style="display: flex;justify-content: center;">
+            <button class="up" id="up">Up</button>
+        </div>
+<div class="btnsschild" style="display: flex; justify-content: center; gap: 10px;">
+    <button class="Left" id="left">Left</button>
+    <button class="down" id="down">Down</button>
+    <button class="right" id="right">Right</button>
+</div>
     </div>
 
     <script src="app.js"></script>

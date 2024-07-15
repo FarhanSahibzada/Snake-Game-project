@@ -1,20 +1,24 @@
 * {
     margin: 0;
     padding: 0;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     min-height: 100vh;
     min-width: 100vw;
-    overflow: hidden;
-
+    overflow-x: hidden !important;
 }
 
-.head{
+html {
+    scroll-behavior: smooth;
+}
+
+.head {
     margin-right: 20px;
 }
+
 .img {
     margin-right: 10px;
     width: 450px;
@@ -22,8 +26,7 @@ body {
     object-fit: cover !important;
     filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
 }
-
-#board{
+#board {
     background: #fefedfc9;
     width: 90vmin;
     height: 90vmin;
@@ -32,49 +35,196 @@ body {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.5);
     display: grid;
-    grid-template-columns: repeat(18,1fr);
-    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
 
 
 }
-@media  screen  and (max-width:570px) {
-    
-    .main{
-        flex-wrap: wrap;
-    }
-}
 
-.headss{
-    background:linear-gradient(rgb(231, 109, 109),rgb(236, 236, 148));
+.headss {
+    background: linear-gradient(rgb(231, 109, 109), rgb(236, 236, 148));
     border: 1px solid purple;
     transform: scale(1.01);
     border-radius: 12px;
 }
-.snakebody{
+
+.snakebody {
     background-color: purple;
     border: .25vmin solid white;
     border-radius: 12px;
 }
-.food{
-    background:linear-gradient(red,purple);
+
+.food {
+    background: linear-gradient(red, purple);
     border: .25vmin solid black;
     border-radius: 8px;
 }
 
-.score{
-    position: absolute;
+
+.score {
+    text-align: left;
+    color: white;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.highest {
+    color: white;
+    font-size: 23px;
+    font-weight: 500;
+
+}
+
+@media (min-width:320px) and (max-width : 639px) {
+    .main {
+        flex-wrap: wrap;
+    }
+
+    .btnss {
+        display: flex !important;
+        margin-bottom: 30px;
+    }
+
+    .img {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        left: 100px;
+    }
+
+    .container {
+        overflow: hidden;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #board {
+        width: 100vw;
+        margin-right: 0 !important;
+    }
+
+    .scoreee {
+        position: relative !important;
+        top: 250px !important;
+        left: 20px !important;
+    }
+}
+
+@media (min-width:640px) and (max-width : 860px) {
+    body {
+        overflow: hidden !important;
+    }
+
+    .main {
+        padding: 8px;
+        justify-content: space-around;
+        overflow-x: hidden !important;
+    }
+
+    .head {
+        margin-right: -140px;
+
+    }
+
+    .img {
+        width: 350px;
+        height: 300px;
+        position: relative;
+        right: 65px;
+
+    }
+
+    .container {
+        overflow: hidden;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #board {
+        width: 100vmin;
+        margin-right: 0 !important;
+    }
+
+    .scoreee {
+        position: relative !important;
+        top: 70px !important;
+        left: 40px !important;
+
+    }
+}
+
+@media (min-width:861px) and (max-width : 1100px) {
+    .main {
+        padding: 8px;
+        justify-content: space-around;
+        overflow-x: hidden !important;
+    }
+
+    .head {
+        margin-right: -140px;
+
+    }
+
+    .img {
+        width: 350px;
+        height: 300px;
+        position: relative;
+        right: 65px;
+
+    }
+
+    .container {
+        overflow: hidden;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #board {
+        width: 100vmin;
+        margin-right: 0 !important;
+    }
+
+    .scoreee {
+        position: relative !important;
+        top: 70px !important;
+        left: 40px !important;
+
+    }
+}
+
+.scoreee {
+    display: inline-block;
+    position: relative;
     color: white;
     font-size: 23px;
     font-weight: 600;
     top: 50px;
-    left: 34.5%;
-
+    left: 30.5%;
 }
-.highest{
-    position: absolute;
+
+.btnss {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    background-color: #8aa7ec;
     color: white;
-    font-size: 23px;
-    font-weight: 600;
-    top: 90px;
-    left: 28.5%;
+    font-weight: 700;
+    font-size: 22px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    transition: 1s all;
+}
+button:active {
+transform: translateY(20px);
 }

@@ -5,9 +5,13 @@ let directionsound = new Audio('music/direction.mp3.wav');
 let backgroundsound = new Audio('music/background.mp3');
 let hitsound = new Audio('music/hit.mp3.wav');
 let lastpainttime = 0;
-let speed = 5;
+let speed = 8;
 let score = document.getElementById("score");
 let num = 0;
+let upbtn = document.getElementById("up");
+let leftbtn = document.getElementById("left");
+let downbtn = document.getElementById("down");
+let rightbtn = document.getElementById("right");
 let board = document.getElementById("board");
 let snakearr = [
   { x: 13, y: 15 }
@@ -34,7 +38,7 @@ function main(ctime) {
   }
   lastpainttime = ctime;
   gameEngine();
-  
+
 }
 function iscollide(snake) {
   // if you hit yourself 
@@ -42,10 +46,10 @@ function iscollide(snake) {
     if (snake[index].x === snake[0].x && snake[index].y === snake[0].y) {
       return true;
     }
-  } 
+  }
   // if you hit with the wall
   if (snake[0].x >= 18 || snake[0].x <= 0 || snake[0].y >= 18 || snake[0].y <= 0) {
-  
+
     return true;
   }
 }
@@ -141,5 +145,36 @@ document.addEventListener("keydown", function (e) {
       break
     default:
       break;
+  
   }
 });
+
+document.addEventListener("click",(e)=>{
+  inputdir = { x: 0, y: 0 }// start the game
+  backgroundsound.play();
+  directionsound.playbackRate = 15.50;
+switch (e.target.id) {
+    case "up":
+      directionsound.play();
+      inputdir.x = 0;
+      inputdir.y = -1;
+      break;
+    case "down":
+      directionsound.play();
+      inputdir.x = 0;
+      inputdir.y = 1;
+      break
+    case "left":
+      directionsound.play();
+      inputdir.x = -1;
+      inputdir.y = 0;
+      break
+    case "right":
+      directionsound.play();
+      inputdir.x = 1;
+      inputdir.y = 0;
+      break
+    default:
+      break;
+  }
+})
